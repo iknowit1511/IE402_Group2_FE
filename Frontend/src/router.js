@@ -2,6 +2,7 @@ import { ROUTERS } from "./utils/router";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/homePage";
 import MasterLayout from "./pages/themes/masterLayout";
+import Booking from "./pages/booking";
 
 const renderUserRouter = () => {
     const userRouters = [
@@ -9,6 +10,10 @@ const renderUserRouter = () => {
             path: ROUTERS.USER.HOME,
             component: <HomePage />
         },
+        {
+            path: ROUTERS.USER.BOOKING,
+            component: <Booking />
+        }
     ]
 
     return (
