@@ -59,54 +59,61 @@ function Booking() {
     <div className="container">
       <div className="form-section">
         <h2>Thông tin khách hàng</h2>
-        <div className="form-group">
-          <label>Họ và Tên</label>
-          <input
-            type="text"
-            name="hoTen"
-            placeholder="Họ và tên"
-            value={formData.hoTen}
-            onChange={handleChange}
-          />
+        <div className="form-row row-2">
+          <div className="form-group">
+            <label>Họ và Tên</label>
+            <input
+              type="text"
+              name="hoTen"
+              placeholder="Họ và tên"
+              value={formData.hoTen}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label>Số điện thoại</label>
+            <input
+              type="text"
+              name="sdt"
+              placeholder="Số điện thoại"
+              value={formData.sdt}
+              onChange={handleChange}
+            />
+          </div>
         </div>
-        <div className="form-group">
-          <label>Số điện thoại</label>
-          <input
-            type="text"
-            name="sdt"
-            placeholder="Số điện thoại"
-            value={formData.sdt}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="form-group">
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="form-group">
-          <label>Nơi khởi hành</label>
-          <input
-            type="text"
-            name="noiKhoiHanh"
-            placeholder="Nơi khởi hành"
-            value={formData.noiKhoiHanh}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="form-group">
-          <label>Ngày khởi hành</label>
-          <input
-            type="date"
-            name="ngayKhoiHanh"
-            value={formData.ngayKhoiHanh}
-            onChange={handleChange}
-          />
+
+        <div className="form-row row-2">
+          <div className="form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-subgroup">
+            <div className="form-group">
+              <label>Nơi khởi hành</label>
+              <input
+                type="text"
+                name="noiKhoiHanh"
+                placeholder="Nơi khởi hành"
+                value={formData.noiKhoiHanh}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label>Ngày khởi hành</label>
+              <input
+                type="date"
+                name="ngayKhoiHanh"
+                value={formData.ngayKhoiHanh}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
         </div>
 
         <h3>Số lượng người</h3>
