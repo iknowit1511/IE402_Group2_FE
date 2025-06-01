@@ -19,6 +19,21 @@
   border-width: 1px;
   border-color: #c4c4c4;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+
+  .form-row {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .form-subgroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.row-2 {
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .summary-section {
@@ -48,8 +63,8 @@
     outline: none;
 
     &:focus {
-      border-color: #7c3aed;
-      box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+      border-color: #3b71fe;
+      box-shadow: 0 0 0 2px rgba(59, 113, 254, 0.2);
     }
   }
 }
@@ -84,11 +99,12 @@ h3 {
     gap: 0.5rem;
 
     button {
-      background-color: #f3f3f3;
-      border: 1px solid #ccc;
+      background-color: white;
+      border: 1px solid #b0b0b0;
       padding: 0.4rem 0.8rem;
       border-radius: 6px;
       font-size: 1.2rem;
+      font-weight: lighter;
       cursor: pointer;
       transition: all 0.2s ease;
       color: black;
