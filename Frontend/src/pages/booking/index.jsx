@@ -6,6 +6,7 @@ import "./style.scss";
 function Booking() {
   const [searchParams] = useSearchParams();
   const maTour = searchParams.get("maTour") || "TTH-xxxxx";
+  const tenTour = searchParams.get("tenTour") || "Huế mộng mơ - Dấu ấn cố đô";
 
   const [formData, setFormData] = useState({
     hoTen: "",
@@ -161,7 +162,7 @@ function Booking() {
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Hue_Citadel.jpg/220px-Hue_Citadel.jpg"
             alt="Huế"
           />
-          <h3>Khám phá cố đô Huế</h3>
+          <h3>{tenTour}</h3>
           <p>Mã tour : {maTour}</p>
           <p>
             Khởi hành :{" "}
@@ -191,7 +192,11 @@ function Booking() {
             <span style={{ color: "red" }}>{formatCurrency(tongTien)}</span>
           </p>
         </div>
-        <button onClick={handleSubmit}>Thanh toán ngay</button>
+        <div className="submit-button">
+          <Link to="/#">
+            <button onClick={handleSubmit}> Thanh toán ngay</button>
+          </Link>
+        </div>
       </div>
     </div>
   );

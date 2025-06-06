@@ -1,6 +1,7 @@
 export const ROUTERS = {
     USER: {
         HOME: "",
-        BOOKING: "Booking",
+        BOOKING: "booking",
+        TOUR: "tour",
     }
 }

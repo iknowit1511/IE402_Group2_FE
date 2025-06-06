@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/homePage";
 import MasterLayout from "./pages/themes/masterLayout";
 import Booking from "./pages/booking";
+import Tour from "./pages/tour";
 
 const renderUserRouter = () => {
     const userRouters = [
@@ -13,6 +14,10 @@ const renderUserRouter = () => {
         {
             path: ROUTERS.USER.BOOKING,
             component: <Booking />
+        },
+        {
+            path: ROUTERS.USER.TOUR,
+            component: <Tour />
         }
     ]
 
