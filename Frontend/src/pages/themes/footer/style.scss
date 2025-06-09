@@ -1,65 +1,44 @@
 @use "sass:map";
 
-
 .footer {
-    background-color: #FBFAFA;
+  font-family: Arial, sans-serif;
+  margin-top: 10rem;
+  background: #003b95;
+  color: white;
+  padding: 2rem;
+}
 
-    .footer-container {
-        width: 100%;
-        margin: 0;
-        margin-top: 30px;
-        position: absolute;
-        font-size: 25px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        column-gap: 200px;
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
 
-        a {
-            text-decoration: none;
-            color: #3E2723;
-        }
+.footer input {
+  width: 50%;
+  padding: 0.5rem;
+  border-radius: 24px;
+  margin-top: 0.5rem;
+  border: 2px solid #e6e8ec;
+  color: #b1b5c3;
+  background-color: #003b95;
+}
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
+.footer h3,
+.footer h4 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
 
-        p {
-            font-size: 35px;
-            font-weight: bolder;
-        }
+.footer p {
+  margin: 0.25rem 0;
+  font-weight: light;
+}
 
-        .Follow {
-            a {
-                border: dashed #3E2723;
-                display: inline-flex; // Đảm bảo nội dung căn giữa
-                align-items: center; // Căn giữa icon theo trục dọc
-                justify-content: center; // Căn giữa icon theo trục ngang
-                width: 50px; // Chiều rộng
-                height: 50px; // Chiều cao
-                margin-right: 20px;
-                border-radius: 50%; // Tạo hình tròn
-                font-size: 30px; // Kích thước icon
-                font-weight: bolder;
-                color: #3E2723;
-                text-align: center;
-
-                &:hover {
-                    background-color: #3E2723;
-                    color: white;
-                    transition: 0.3s;
-                }
-            }
-        }
-
-        .Thong-tin {
-            a {
-                &:hover {
-                    opacity: 60%;
-                }
-            }
-        }
-    }
+.copyright {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: #ccc;
 }

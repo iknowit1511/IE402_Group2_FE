@@ -1,15 +1,21 @@
 import { ROUTERS } from "./utils/router";
 import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/homePage";
+import Home from "./pages/HomePage";
 import MasterLayout from "./pages/themes/masterLayout";
 import Booking from "./pages/booking";
+import BookingHistory from "./pages/BookingHistoryPage";
 import Tour from "./pages/tour";
+import Payment from "./pages/PaymentPage";
+import Account from "./pages/AccountPage";
+import LogIn from "./pages/logIn";
+import SignUp from "./pages/signUp";
+
 
 const renderUserRouter = () => {
     const userRouters = [
         {
             path: ROUTERS.USER.HOME,
-            component: <HomePage />
+            component: <Home />
         },
         {
             path: ROUTERS.USER.BOOKING,
@@ -18,6 +24,26 @@ const renderUserRouter = () => {
         {
             path: ROUTERS.USER.TOUR,
             component: <Tour />
+        },
+        {
+            path: ROUTERS.USER.BOOKINGHISTORY,
+            component: <BookingHistory />
+        },
+        {
+            path: ROUTERS.USER.PAYMENT,
+            componeent: <Payment />
+        },
+        {
+            path: ROUTERS.USER.ACCOUNT,
+            component: <Account />
+        },
+        {
+            path: ROUTERS.USER.LOGIN,
+            component: <LogIn />
+        },
+        {
+            path: ROUTERS.USER.SIGNUP,
+            component: <SignUp />
         }
     ]
 
