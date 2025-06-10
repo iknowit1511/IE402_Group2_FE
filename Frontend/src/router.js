@@ -5,6 +5,7 @@ import MasterLayout from "./pages/themes/masterLayout";
 import Booking from "./pages/booking";
 import BookingHistory from "./pages/BookingHistoryPage";
 import Tour from "./pages/tour";
+import TourDetail from "./pages/tourDetail";
 import Payment from "./pages/PaymentPage";
 import Account from "./pages/AccountPage";
 import LogIn from "./pages/logIn";
@@ -24,6 +25,10 @@ const renderUserRouter = () => {
         {
             path: ROUTERS.USER.TOUR,
             component: <Tour />
+        },
+        {
+            path: ROUTERS.USER.TOUR_DETAIL,
+            component: <TourDetail />
         },
         {
             path: ROUTERS.USER.BOOKINGHISTORY,

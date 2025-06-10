@@ -53,7 +53,6 @@ function Booking() {
       maTour,
     };
     console.log("Dữ liệu gửi đi:", data);
-    alert("Thanh toán thành công!");
   };
 
   return (
@@ -193,7 +192,7 @@ function Booking() {
           </p>
         </div>
         <div className="submit-button">
-          <Link to="/#">
+          <Link to="/payment">
             <button onClick={handleSubmit}> Thanh toán ngay</button>
           </Link>
         </div>
