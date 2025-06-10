@@ -3,6 +3,7 @@ export const ROUTERS = {
         HOME: "",
         BOOKING: "booking",
         TOUR: "tour",
+        TOUR_DETAIL: "tour-detail",
         BOOKINGHISTORY: "booking-history",
         PAYMENT: "payment",
         ACCOUNT: "account",

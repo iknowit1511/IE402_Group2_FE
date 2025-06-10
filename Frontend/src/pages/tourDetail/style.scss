@@ -1,4 +1,4 @@
-.tour-container {
+.tour-detail-container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -11,7 +11,7 @@
 }
 
 .breadcrumb {
-  width: 290px;
+  width: auto;
   font-size: 15px;
   margin: 0;
   margin-bottom: 20px;
@@ -86,17 +86,4 @@
     color: #ffffff;
     font-size: 20px;
   }
-}
-
-.tour-title {
-  font-size: 30px;
-  font-weight: bold;
-  margin-top: 15px;
-  margin-bottom: 0;
-}
-
-.tour-list {
-  display: flex;
-  flex-direction: row;
-  gap: 1.5rem;
 }

@@ -9,55 +9,54 @@ import PasswordToggle from "../../components/passHide-Unhide";
 // import SignUpService from "../../services/handleSignUp";
 
 const SignUp = () => {
-  // Hàm xử lý gửi form
-  //   const handleSubmit = async (e) => {
-  //     e.preventDefault();
+  //Hàm xử lý gửi form
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  //     const email = document.getElementById("email").value.trim();
-  //     const username = document.getElementById("userName").value.trim();
-  //     const fullname = document.getElementById("fullName").value;
-  //     const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const lastName = document.getElementById("fullName").value;
+    const firstName = document.getElementById("fullName").value;
+    const phone = document.getElementById("phone").value;
+    const passwordInputs = document.querySelectorAll(".password-toggle__input");
+    const password = passwordInputs[0].value.trim();
+    const confirmPassword = passwordInputs[1].value.trim();
 
-  //     const passwordInputs = document.querySelectorAll(".password-toggle__input");
-  //     const password = passwordInputs[0].value.trim();
-  //     const confirmPassword = passwordInputs[1].value.trim();
+    if (
+      !email ||
+      !lastName ||
+      !firstName ||
+      !password ||
+      !confirmPassword ||
+      !phone
+    ) {
+      alert("Vui lòng nhập đầy đủ thông tin!");
+      return;
+    }
+    if (password.length < 8) {
+      alert("Mật khẩu phải có 8 ký tự trở lên.");
+      return;
+    } else if (password !== confirmPassword) {
+      alert("Mật khẩu không khớp! Vui lòng kiểm tra lại.");
+      return;
+    }
 
-  //     if (
-  //       !email ||
-  //       !fullname ||
-  //       !username ||
-  //       !phone ||
-  //       !password ||
-  //       !confirmPassword
-  //     ) {
-  //       alert("Vui lòng nhập đầy đủ thông tin!");
-  //       return;
-  //     }
-  //     if (password.length < 8) {
-  //       alert("Mật khẩu phải có 8 ký tự trở lên.");
-  //       return;
-  //     } else if (password !== confirmPassword) {
-  //       alert("Mật khẩu không khớp! Vui lòng kiểm tra lại.");
-  //       return;
-  //     }
+    // const userData = {
+    //   email,
+    //   username,
+    //   fullname,
+    //   phone,
+    //   password,
+    // };
 
-  //     const userData = {
-  //       email,
-  //       username,
-  //       fullname,
-  //       phone,
-  //       password,
-  //     };
-
-  //     try {
-  //       const result = await SignUpService.signUpRequest(userData);
-  //       alert("Đăng ký thành công!");
-  //       console.log(result);
-  //     } catch (error) {
-  //       alert("Đăng ký thất bại!");
-  //       console.error(error);
-  //     }
-  //   };
+    // try {
+    //   const result = await SignUpService.signUpRequest(userData);
+    //   alert("Đăng ký thành công!");
+    //   console.log(result);
+    // } catch (error) {
+    //   alert("Đăng ký thất bại!");
+    //   console.error(error);
+    // }
+  };
 
   return (
     <div className="signUp">
@@ -84,8 +83,7 @@ const SignUp = () => {
           <span>Hoặc tạo tài khoản mới</span>
         </div>
 
-        {/* <form onSubmit={handleSubmit}> */}
-        <form>
+        <form onSubmit={handleSubmit}>
           <label htmlFor="fullName">
             Tên <span>*</span>
           </label>
@@ -100,6 +98,11 @@ const SignUp = () => {
             Email <span>*</span>
           </label>
           <input type="text" id="email" placeholder="Địa chỉ email" />
+
+          <label htmlFor="phone">
+            Số điện thoại <span>*</span>
+          </label>
+          <input type="text" id="phone" placeholder="Số điện thoại" />
 
           <label htmlFor="password">
             Mật khẩu <span>*</span>

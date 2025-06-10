@@ -1,6 +1,7 @@
 import { memo } from "react";
 import { Link } from "react-router-dom";
 import "./style.scss";
+import { FaRegBell } from "react-icons/fa";
 
 const Header = () => {
   return (
@@ -16,6 +17,11 @@ const Header = () => {
       </nav>
       <div className="user-info">
         <span>FAQ</span>
+        <FaRegBell
+          className="notification-icon"
+          style={{ marginRight: "5px", color: "#3F3545" }}
+          size="20px"
+        />
         <img src="/assets/avatar.jpg" alt="avatar" className="avatar" />
       </div>
     </header>
