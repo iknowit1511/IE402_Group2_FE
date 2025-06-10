@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./style.scss";
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { FaTwitter } from "react-icons/fa";
 import PasswordToggle from "../../components/passHide-Unhide";
 
 // import SignUpService from "../../services/handleSignUp";
@@ -62,27 +63,43 @@ const SignUp = () => {
     <div className="signUp">
       <div className="signUp-form">
         <h2 style={{ fontSize: "30px" }}>Đăng ký</h2>
+
+        <div className="signIn-text">
+          Đã có tài khoản? <Link to="/login">Đăng nhập</Link>
+        </div>
+
+        <div className="social-signUp">
+          <button className="facebook-button">
+            <FaFacebook style={{ marginRight: "5px", color: "#4776D0" }} />{" "}
+          </button>
+          <button className="google-button">
+            <FcGoogle style={{ marginRight: "5px" }} />
+          </button>
+          <button className="twitter-button">
+            <FaTwitter style={{ marginRight: "5px", color: "#01AEEF" }} />
+          </button>
+        </div>
+
+        <div className="divider">
+          <span>Hoặc tạo tài khoản mới</span>
+        </div>
+
         {/* <form onSubmit={handleSubmit}> */}
         <form>
-          <label htmlFor="email">
-            Địa chỉ email <span>*</span>
+          <label htmlFor="fullName">
+            Tên <span>*</span>
           </label>
-          <input type="text" id="email" placeholder="Email " />
-
-          <label htmlFor="username">
-            Tên tài khoản <span>*</span>
-          </label>
-          <input type="text" id="userName" placeholder="Tên tài khoản" />
+          <input type="text" id="fullName" placeholder="Nhập tên của bạn" />
 
           <label htmlFor="fullName">
-            Họ tên người dùng <span>*</span>
+            Họ <span>*</span>
           </label>
-          <input type="text" id="fullName" placeholder="Họ tên người dùng" />
+          <input type="text" id="fullName" placeholder="Nhập họ của bạn" />
 
-          <label htmlFor="phone">
-            Số điện thoại <span>*</span>
+          <label htmlFor="email">
+            Email <span>*</span>
           </label>
-          <input type="text" id="phone" placeholder="Số điện thoại" />
+          <input type="text" id="email" placeholder="Địa chỉ email" />
 
           <label htmlFor="password">
             Mật khẩu <span>*</span>
@@ -98,24 +115,6 @@ const SignUp = () => {
             Đăng ký
           </button>
         </form>
-
-        <div className="divider">
-          <span>HOẶC</span>
-        </div>
-
-        <div className="social-signUp">
-          <button className="facebook-button">
-            <FaFacebook style={{ marginRight: "5px", color: "#4776D0" }} />{" "}
-            Facebook
-          </button>
-          <button className="google-button">
-            <FcGoogle style={{ marginRight: "5px" }} /> Google
-          </button>
-        </div>
-
-        <div className="signIn-text">
-          Bạn đã có tài khoản? <Link to="/Sign-In">Đăng nhập</Link>
-        </div>
       </div>
     </div>
   );
