@@ -31,7 +31,7 @@ const renderUserRouter = () => {
         },
         {
             path: ROUTERS.USER.PAYMENT,
-            componeent: <Payment />
+            component: <Payment />
         },
         {
             path: ROUTERS.USER.ACCOUNT,

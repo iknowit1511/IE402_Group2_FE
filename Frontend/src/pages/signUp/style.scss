@@ -27,6 +27,7 @@
       color: #353945;
       margin-top: 10px;
       font-size: 16px;
+      font-weight: 550;
 
       span {
         color: #f02121;
@@ -49,18 +50,20 @@
 
     .signUp-button {
       width: 100%;
-      padding: 10px;
-      background-color: #ffe0b2;
+      padding: 16px;
+      background-color: #3b71fe;
       border: none;
-      border-radius: 4px;
-      color: #4e3b28;
-      font-size: 25px;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
       cursor: pointer;
       margin-top: 10px;
 
       &:hover {
-        background-color: #4e3b28;
-        color: #ffe0b2;
+        background-color: white;
+        color: #3b71fe;
+        border: 1px solid #3b71fe;
       }
     }
 
@@ -75,13 +78,13 @@
         content: "";
         flex: 1;
         height: 1px;
-        background-color: #3e2723;
+        background-color: #e6e8ec;
       }
 
       span {
         padding: 0 10px;
-        color: #3e2723;
-        font-size: 30px;
+        color: #777e90;
+        font-size: 14px;
       }
     }
 
@@ -90,35 +93,33 @@
       justify-content: space-between;
       gap: 10px;
 
-      .facebook-button,
-      .google-button {
+      button {
         flex: 1;
         padding: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #fff3e0;
-        border: 1px solid #3e2723;
+        background-color: white;
+        border: 1px solid #e6e8ec;
         border-radius: 10px;
         font-size: 25px;
         cursor: pointer;
         color: #3e2723;
 
         &:hover {
-          background-color: #4e3b28;
-          color: #ffe0b2;
+          border-color: #3b71fe;
         }
       }
     }
 
     .signIn-text {
       text-align: center;
-      font-size: 20px;
-      color: #3e2723;
-      margin-top: 15px;
+      font-size: 18px;
+      color: #777e90;
+      margin: 15px;
 
       a {
-        color: #777cfe;
+        color: #3b71fe;
         text-decoration: none;
 
         &:hover {
