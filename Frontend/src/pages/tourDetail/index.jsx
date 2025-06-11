@@ -15,7 +15,7 @@ import "./style.scss";
 
 function TourDetail() {
   const navigate = useNavigate();
-  const [selectedDate, setSelectedDate] = useState("30/05/2025");
+  const [selectedDate, setSelectedDate] = useState();
   const [guestCount, setGuestCount] = useState(1);
 
   // Dữ liệu tour
