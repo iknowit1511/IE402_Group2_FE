@@ -33,7 +33,7 @@ const TourCard = ({
           <span className="tour-card__schedule">Lịch trình: {schedule}</span>
         </div>
 
-        <Link to="/">
+        <Link to="/tour-detail">
           <div className="tour-card__button">{price.toLocaleString()} VNĐ</div>
         </Link>
       </div>

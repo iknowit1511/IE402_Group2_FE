@@ -27,6 +27,7 @@ const renderUserRouter = () => {
             component: <Tour />
         },
         {
+            // `${ROUTERS.USER.TOUR_DETAIL}/:id`
             path: ROUTERS.USER.TOUR_DETAIL,
             component: <TourDetail />
         },

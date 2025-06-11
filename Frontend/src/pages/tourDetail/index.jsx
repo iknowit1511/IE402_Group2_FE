@@ -1,5 +1,5 @@
 import React, { memo, useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 import {
@@ -10,24 +10,31 @@ import {
   AiOutlineMessage,
   AiFillStar,
 } from "react-icons/ai";
+import getTourDetail from "../../services/getTourDetail";
 import "./style.scss";
 
 function TourDetail() {
-  // Dữ liệu tour - tất cả đều là biến đầu vào
+  const navigate = useNavigate();
+  const [selectedDate, setSelectedDate] = useState("30/05/2025");
+  const [guestCount, setGuestCount] = useState(1);
+
+  // Dữ liệu tour
   const tourData = {
+    id: "tour-hue-001", // Thêm ID để dễ quản lý
     title: "Huế mộng mơ - Dấu ấn cố đô",
     rating: 4.8,
     reviewCount: 98,
-    price: 2000000,
+    price: 2100000,
     currency: "đ",
     startDate: "30/05/2025",
     duration: "3 ngày 2 đêm",
+    availableDates: ["30/05/2025", "29/08/2025"], // Thêm các ngày có sẵn
     images: [
-      "/api/placeholder/600/400", // Main image
-      "/api/placeholder/200/150", // Thumbnail 1
-      "/api/placeholder/200/150", // Thumbnail 2
-      "/api/placeholder/200/150", // Thumbnail 3
-      "/api/placeholder/200/150", // Thumbnail 4
+      "/api/placeholder/600/400",
+      "/api/placeholder/200/150",
+      "/api/placeholder/200/150",
+      "/api/placeholder/200/150",
+      "/api/placeholder/200/150",
     ],
     morePhotos: 12,
     description:
@@ -107,6 +114,48 @@ function TourDetail() {
       note: "Trong những trường hợp khách quan như: khủng bố, thiên tai... hoặc do có sự cố, có sự thay đổi lịch trình của các phương tiện vận chuyển công cộng như: máy bay, tàu hỏa... thì Cty sẽ giữ quyền thay đổi lộ trình bất cứ lúc nào vì sự thuận tiện, an toàn cho khách hàng và sẽ không chịu trách nhiệm bồi thường những thiệt hại phát sinh.",
     },
   };
+
+  // Hàm xử lý đặt tour
+  const handleBookTour = () => {
+    const bookingData = {
+      tour: tourData,
+      selectedDate: selectedDate,
+      guestCount: guestCount,
+      totalPrice: tourData.price * guestCount,
+      bookingTime: new Date().toISOString(),
+    };
+
+    // Cách 1: Sử dụng navigate với state
+    navigate("/booking", {
+      state: {
+        bookingData,
+        fromTourDetail: true,
+      },
+    });
+  };
+
+  // Hàm xử lý tư vấn
+  const handleConsult = () => {
+    const consultData = {
+      tour: {
+        id: tourData.id,
+        title: tourData.title,
+        price: tourData.price,
+        duration: tourData.duration,
+      },
+      selectedDate: selectedDate,
+      guestCount: guestCount,
+      requestType: "consultation",
+    };
+
+    navigate("/consultation", {
+      state: {
+        consultData,
+        fromTourDetail: true,
+      },
+    });
+  };
+
   return (
     <div className="tour-detail-container">
       <div className="search_bar">
@@ -294,13 +343,10 @@ function TourDetail() {
                     <span className="location-city">
                       {tourData.location.city}
                     </span>
-                    <span className="location-region">
-                      {tourData.location.region}
-                    </span>
                   </div>
                 </div>
                 <button className="view-itinerary-btn">
-                  Xem hành trình tour
+                  <Link to="/">Xem hành trình tour</Link>
                 </button>
               </div>
 
@@ -308,24 +354,58 @@ function TourDetail() {
                 <div className="date-picker">
                   <AiOutlineCalendar className="calendar-icon" />
                   <span>Ngày khởi hành:</span>
-                  <select>
-                    <option>{tourData.startDate}</option>
+                  <select
+                    value={selectedDate}
+                    onChange={(e) => setSelectedDate(e.target.value)}
+                  >
+                    {tourData.availableDates.map((date, index) => (
+                      <option key={index} value={date}>
+                        {date}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="guest-count">
+                  <span>Số khách:</span>
+                  <select
+                    className="guest-select"
+                    value={guestCount}
+                    onChange={(e) => setGuestCount(parseInt(e.target.value))}
+                  >
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+                      <option key={num} value={num}>
+                        {num} khách
+                      </option>
+                    ))}
                   </select>
                 </div>
 
                 <div className="price-section">
-                  <span className="price">
-                    {tourData.price.toLocaleString()}
-                  </span>
-                  <span className="currency">{tourData.currency}</span>
+                  <div className="price-per-person">
+                    <span className="price">
+                      {tourData.price.toLocaleString()}
+                    </span>
+                    <span className="currency">{tourData.currency}</span>
+                  </div>
                 </div>
 
                 <div className="booking-buttons">
-                  <button className="consult-btn">
+                  <button className="consult-btn" onClick={handleConsult}>
                     <AiOutlineMessage className="icon" />
                     Tư vấn
                   </button>
-                  <button className="book-btn">Đặt ngay</button>
+                  <Link
+                    to="/booking"
+                    state={{
+                      tourData: tourData,
+                      selectedDate: selectedDate,
+                      guestCount: guestCount,
+                    }}
+                    className="book-btn"
+                  >
+                    Đặt ngay
+                  </Link>
                 </div>
               </div>
             </div>
