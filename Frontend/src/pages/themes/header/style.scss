@@ -1,0 +1,59 @@
+.header {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #2563eb;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #3f3545;
+  font-weight: bold;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #3b71fe;
+    text-decoration: underline;
+  }
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  span {
+    color: #3f3545;
+    font-weight: bold;
+  }
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.notification-icon:hover {
+  color: #3b71fe !important;
+  cursor: pointer;
+}

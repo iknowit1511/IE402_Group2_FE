@@ -1,0 +1,102 @@
+.tour-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  color: black;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  width: 290px;
+  font-size: 15px;
+  margin: 0;
+  margin-bottom: 20px;
+
+  .breadcrumb-link {
+    color: #000000;
+    text-decoration: none; // Remove underline
+    transition: color 0.3s;
+
+    &:hover {
+      color: #3b71fe;
+    }
+  }
+
+  .arrow {
+    margin: 0 5px;
+  }
+
+  .current {
+    font-weight: bold;
+    color: #000;
+  }
+}
+
+// Thanh tìm kiếm
+.search_bar {
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 3px 5px;
+  border-radius: 20px;
+  outline: #e6e8ec 2px solid;
+  height: 40px;
+  width: 326px;
+
+  input {
+    padding: 5px;
+    font-size: 16px;
+    width: 257px;
+    color: #777e90;
+    background-color: #ffffff;
+    border: none;
+
+    &:focus {
+      outline: none; // Ngăn trình duyệt thêm viền mặc định
+      box-shadow: none; // Ngăn hiệu ứng đổ bóng
+      border-color: #ccc; // Không đổi màu viền khi focus
+    }
+    &::placeholder {
+      font-weight: 500;
+      color: #777e90;
+    }
+  }
+
+  .search-button {
+    margin-top: 0;
+    width: 25px;
+    height: 25px;
+    padding: 20px 20px;
+    background-color: #3b71fe;
+    border-radius: 50%;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex; // căn giữa icon
+    align-items: center;
+    justify-content: center;
+  }
+
+  i {
+    color: #ffffff;
+    font-size: 20px;
+  }
+}
+
+.tour-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.tour-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
