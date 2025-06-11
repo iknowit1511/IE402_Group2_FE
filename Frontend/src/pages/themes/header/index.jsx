@@ -22,7 +22,13 @@ const Header = () => {
           style={{ marginRight: "5px", color: "#3F3545" }}
           size="20px"
         />
-        <img src="/assets/avatar.jpg" alt="avatar" className="avatar" />
+        <Link to="/account">
+          <img
+            src={require("../../../assets/avatar.jpg")}
+            alt="avatar"
+            className="avatar"
+          />
+        </Link>
       </div>
     </header>
   );

@@ -19,7 +19,11 @@ export default function Home() {
     <div className="homepage">
       {/* Banner + Search */}
       <div className="banner">
-        <img src="/assets/banner.jpg" alt="banner" className="banner-img" />
+        <img
+          src={require("../../assets/banner.jpg")}
+          alt="banner"
+          className="banner-img"
+        />
         <form onSubmit={handleSearch} className="search-form">
           <input
             type="text"

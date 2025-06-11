@@ -8,7 +8,7 @@ import "./style.scss";
 function Tour() {
   return (
     <div className="tour-container">
-      <div className="breadcrumb">
+      {/* <div className="breadcrumb">
         <a href="/" className="breadcrumb-link">
           Trang chủ
         </a>
@@ -16,7 +16,7 @@ function Tour() {
         <a href="/tour" className="breadcrumb-link">
           <span className="current">Tour</span>
         </a>
-      </div>
+      </div> */}
 
       <div className="search_bar">
         <input

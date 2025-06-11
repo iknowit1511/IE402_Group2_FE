@@ -1,32 +1,56 @@
 import React, { memo, useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./style.scss";
 
 function Booking() {
   const [searchParams] = useSearchParams();
-  const maTour = searchParams.get("maTour") || "TTH-xxxxx";
-  const tenTour = searchParams.get("tenTour") || "Huế mộng mơ - Dấu ấn cố đô";
+  const location = useLocation();
+  const navigate = useNavigate();
 
+  // Nhận dữ liệu từ trang chi tiết tour
+  const tourData = location.state?.tourData;
+  const selectedDate = location.state?.selectedDate;
+  const guestCount = location.state?.guestCount;
+
+  // Fallback từ URL params nếu không có state
+  const maTour = searchParams.get("maTour") || tourData?.id || "TTH-xxxxx";
+  const tenTour =
+    searchParams.get("tenTour") ||
+    tourData?.title ||
+    "Huế mộng mơ - Dấu ấn cố đô";
   const [formData, setFormData] = useState({
     hoTen: "",
     sdt: "",
     email: "",
     noiKhoiHanh: "",
-    ngayKhoiHanh: "",
+    ngayKhoiHanh: selectedDate || tourData?.startDate || "",
   });
 
   const [soLuong, setSoLuong] = useState({
-    nguoiLon: 0,
+    nguoiLon: guestCount || 1,
     treEm: 0,
     emBe: 0,
   });
 
+  // Sử dụng giá từ tourData nếu có, không thì dùng giá mặc định
   const prices = {
-    nguoiLon: 2000000,
-    treEm: 1200000,
-    emBe: 300000,
+    nguoiLon: tourData.price || 2000000,
+    treEm: tourData.price ? Math.floor(tourData.price * 0.6) : 1200000, // 60% giá người lớn
+    emBe: tourData.price ? Math.floor(tourData.price * 0.15) : 300000, // 15% giá người lớn
   };
+
+  // Kiểm tra nếu không có dữ liệu tour
+  useEffect(() => {
+    if (!tourData && !searchParams.get("maTour")) {
+      // Thử lấy từ sessionStorage
+      const savedData = sessionStorage.getItem("tourBookingData");
+      if (!savedData) {
+        alert("Không có dữ liệu tour. Vui lòng chọn tour trước khi đặt.");
+        navigate("/tour");
+      }
+    }
+  }, [tourData, searchParams, navigate]);
 
   const formatCurrency = (value) => value.toLocaleString("vi-VN") + "đ";
 
@@ -104,7 +128,7 @@ function Booking() {
                 onChange={handleChange}
               />
             </div>
-            <div className="form-group">
+            {/* <div className="form-group">
               <label>Ngày khởi hành</label>
               <input
                 type="date"
@@ -112,7 +136,7 @@ function Booking() {
                 value={formData.ngayKhoiHanh}
                 onChange={handleChange}
               />
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -163,10 +187,7 @@ function Booking() {
           />
           <h3>{tenTour}</h3>
           <p>Mã tour : {maTour}</p>
-          <p>
-            Khởi hành :{" "}
-            {new Date(formData.ngayKhoiHanh).toLocaleDateString("vi-VN")}
-          </p>
+          <p>Khởi hành : {formData.ngayKhoiHanh}</p>
           <p>Thời gian : 3N2Đ</p>
           <p>
             Người lớn :{" "}
