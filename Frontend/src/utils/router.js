@@ -8,6 +8,7 @@ export const ROUTERS = {
         PAYMENT: "payment",
         ACCOUNT: "account",
         LOGIN: "login",
-        SIGNUP: "sign-up",
+        SIGNUP: "register",
+        MAPPREVIEW: "map-review",
     }
 }

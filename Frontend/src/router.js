@@ -10,6 +10,7 @@ import Payment from "./pages/PaymentPage";
 import Account from "./pages/AccountPage";
 import LogIn from "./pages/logIn";
 import SignUp from "./pages/signUp";
+// import MapReview from "./pages/Map_review";
 
 
 const renderUserRouter = () => {

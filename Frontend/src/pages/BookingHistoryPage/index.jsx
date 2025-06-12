@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import "./style.css";
 
 export default function BookingHistory() {
-  const [search, setSearch] = useState({ id: "", date: "", route: "", status: "" });
+  const [search, setSearch] = useState({
+    id: "",
+    date: "",
+    route: "",
+    status: "",
+  });
   const [data, setData] = useState([
     {
       id: "ABC123",
@@ -24,21 +29,34 @@ export default function BookingHistory() {
     },
   ]);
 
-  const filtered = data.filter((d) =>
-    (!search.id || d.id.includes(search.id)) &&
-    (!search.date || d.date === search.date) &&
-    (!search.route || d.route.includes(search.route)) &&
-    (!search.status || d.status === search.status)
+  const filtered = data.filter(
+    (d) =>
+      (!search.id || d.id.includes(search.id)) &&
+      (!search.date || d.date === search.date) &&
+      (!search.route || d.route.includes(search.route)) &&
+      (!search.status || d.status === search.status)
   );
 
   return (
     <div className="booking-history">
       <h1>Lịch sử đặt tour</h1>
       <div className="filters">
-        <input placeholder="Mã vé" onChange={(e) => setSearch({ ...search, id: e.target.value })} />
-        <input type="date" onChange={(e) => setSearch({ ...search, date: e.target.value })} />
-        <input placeholder="Tuyến đường" onChange={(e) => setSearch({ ...search, route: e.target.value })} />
-        <select onChange={(e) => setSearch({ ...search, status: e.target.value })}>
+        <input
+          placeholder="Mã vé"
+          onChange={(e) => setSearch({ ...search, id: e.target.value })}
+        />
+        <input
+          type="date"
+          onChange={(e) => setSearch({ ...search, date: e.target.value })}
+        />
+        <input
+          placeholder="Tuyến đường"
+          onChange={(e) => setSearch({ ...search, route: e.target.value })}
+        />
+        <select
+          className="select-status"
+          onChange={(e) => setSearch({ ...search, status: e.target.value })}
+        >
           <option value="">Trạng thái</option>
           <option value="Hết hạn">Hết hạn</option>
           <option value="Đã thanh toán">Đã thanh toán</option>

@@ -213,8 +213,17 @@ function Booking() {
           </p>
         </div>
         <div className="submit-button">
-          <Link to="/payment">
-            <button onClick={handleSubmit}> Thanh toán ngay</button>
+          <Link
+            to="/payment"
+            state={{
+              formData,
+              soLuong,
+              maTour,
+              tenTour,
+              tongTien,
+            }}
+          >
+            <button onClick={handleSubmit}>Thanh toán ngay</button>
           </Link>
         </div>
       </div>

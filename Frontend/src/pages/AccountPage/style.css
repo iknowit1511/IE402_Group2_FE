@@ -1,4 +1,6 @@
 .account-page {
+  width: 50%;
+  margin: 0 auto;
   padding: 2rem;
   font-family: Arial, sans-serif;
 }
@@ -11,13 +13,108 @@
   gap: 1rem;
   margin-top: 1rem;
 }
-input {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
+.information {
+  font-size: 24px;
+  color: #353945;
 }
-button {
-  padding: 0.5rem;
-  background: #2563eb;
+.form-block .info-avatar {
+  display: flex;
+  gap: 35px;
+  height: 100px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+.info-avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+}
+
+.info-avatar .add-new-avatar {
+  width: 169px;
+  height: 40px;
+  border-radius: 8px;
+  background: #3B71FE;
   color: white;
   border: none;
+  font-size: 16px;
+}
+
+.add-new-avatar:hover {
+  background: #1d4ed8;
+  cursor: pointer;
+}
+
+.info-avatar .delete-account {
+  width: 169px;
+  height: 40px;
+  border-radius: 8px;
+  background: white;
+  color: #F65540;
+  border: 1px solid #F65540;
+  font-size: 16px;
+}
+
+input {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 18px;
+}
+.account-page button {
+  width: 150px;
+  height: 48px;
+  padding: 0.5rem;
+  background: #3B71FE;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.save-change {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+button:hover {
+  background: #1d4ed8;
+  cursor: pointer;
+}
+
+.account-page span {
+  color: #777E90;
+  font-size: 20px;
+}
+
+.delete-account:hover {
+  background: #F65540;
+  color: white;
+  cursor: pointer;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2rem;
+}
+
+.info-pair {
+  display: flex;
+  flex-direction: column;
+}
+
+.tour-history-button {
+  width: 150px;
+  height: 48px;
+  margin-top: 20px;
+  padding: 0.5rem;
+  background: #3B71FE;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
 }

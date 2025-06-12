@@ -1,15 +1,21 @@
 .checkout-page {
+  width: 1000px;
+  margin: auto;
+  margin-top: 160px;
   padding: 2rem;
   font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 30px;
 }
 
 .checkout-page h1{
   font-size: 24px;
 }
 .order-box {
-  background: #f9f9f9;
   padding: 1rem;
   margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 30px;
 }
 
 .order-box h2 {
@@ -24,22 +30,38 @@
 }
 .payment-options {
   display: flex;
-  gap: 1rem;
+  justify-content: center;
+  gap: 6rem;
   margin-bottom: 1rem;
+  
 }
 .payment-options button {
+  width: 220px;
+  height: 60px;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 550;
 }
 .payment-options button:hover {
+  color: white;
   background: #1d4ed8;
+  border: 1px solid #1d4ed8;
 }
+
 .pay-button {
+  display: block;
+  margin: 0 auto;
+  width: 85%;
   background: #2563eb;
   color: white;
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 5px;
+  font-size: 20px;
 }
 
 .pay-button:hover {
