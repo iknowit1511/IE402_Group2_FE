@@ -52,7 +52,7 @@ const LogIn = () => {
           {/* <form onSubmit={HandleSubmit}> */}
 
           <p className="signup-text">
-            Chưa có tài khoản? <Link to="/sign-up">Đăng ký</Link>
+            Chưa có tài khoản? <Link to="/register">Đăng ký</Link>
           </p>
 
           <div className="social-signIn">
@@ -80,9 +80,12 @@ const LogIn = () => {
               Mật khẩu <span>*</span>
             </label>
             <PasswordToggle />
-            <button type="submit" className="login-button">
-              Đăng nhập
-            </button>
+            <Link to="/">
+              <button type="submit" className="login-button">
+                Đăng nhập
+              </button>
+            </Link>
+
             <p className="forgot-password">
               <Link to="/Forgot-Password">Quên mật khẩu?</Link>
             </p>
