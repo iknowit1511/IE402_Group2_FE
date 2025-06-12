@@ -4,7 +4,7 @@
   margin-top: 160px;
   padding: 2rem;
   font-family: Arial, sans-serif;
-  border: 2px solid #B0B0B0;
+  border: 1px solid #ccc;
   border-radius: 30px;
 }
 
@@ -14,7 +14,7 @@
 .order-box {
   padding: 1rem;
   margin-bottom: 1rem;
-  border: 2px solid #B0B0B0;
+  border: 1px solid #ccc;
   border-radius: 30px;
 }
 
@@ -41,7 +41,7 @@
   padding: 0.5rem 1rem;
   background-color: white;
   color: black;
-  border: 2px solid #B0B0B0;
+  border: 1px solid #ccc;
   border-radius: 15px;
   font-size: 20px;
   font-weight: 550;
@@ -49,7 +49,7 @@
 .payment-options button:hover {
   color: white;
   background: #1d4ed8;
-  border: 2px solid #1d4ed8;
+  border: 1px solid #1d4ed8;
 }
 
 .pay-button {

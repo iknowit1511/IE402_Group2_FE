@@ -74,6 +74,7 @@
     height: 25px;
     padding: 20px 20px;
     background-color: #3b71fe;
+    border: none;
     border-radius: 50%;
     color: #ffffff;
     cursor: pointer;
@@ -98,5 +99,23 @@
 .tour-list {
   display: flex;
   flex-direction: row;
-  gap: 1.5rem;
+  gap: 3rem;
+}
+
+.show-more {
+  width: 200px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 20px;
+  border: none;
+  background-color: #3b71fe;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 22px;
+
+  &:hover {
+    background-color: #2a5bb8;
+  }
 }

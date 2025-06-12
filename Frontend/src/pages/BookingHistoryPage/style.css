@@ -1,19 +1,27 @@
 .booking-history {
   padding: 2rem;
+  font-family: Arial, sans-serif;
 }
+
 .booking-history h1 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
+
 .filters {
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
 }
+
 .filters input,
 .filters select {
-  padding: 0.5rem;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 18px;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -21,6 +29,7 @@ table {
 thead {
   background: #eee;
 }
+
 td,
 th {
   padding: 0.5rem;
