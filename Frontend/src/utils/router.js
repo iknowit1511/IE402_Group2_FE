@@ -9,6 +9,6 @@ export const ROUTERS = {
         ACCOUNT: "account",
         LOGIN: "login",
         SIGNUP: "sign-up",
-        MAPPREVIEW: "map-preview",
+        MAPPREVIEW: "map-review",
     }
 }
