@@ -1,10 +1,24 @@
 .header {
   font-family: Arial, sans-serif;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 1.5rem;
+  padding: 20px;
   background: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .header-left,
+  .header-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .header-center {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .logo {
@@ -22,7 +36,7 @@
   display: flex;
   gap: 2rem;
   align-items: center;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .nav a {
@@ -57,4 +71,40 @@
 .notification-icon:hover {
   color: #3b71fe !important;
   cursor: pointer;
+}
+
+.login-btn {
+  width: 120px;
+  background-color: #3b71fe;
+  border: 1px solid #3b71fe;
+  padding: 5px;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 5px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #2563eb;
+    color: white;
+  }
+}
+.register-btn {
+  width: 120px;
+  background: none;
+  border: 1px solid white;
+  padding: 5px;
+  color: black;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 5px;
+  margin-right: 20px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: white;
+    border: 1px solid #3b71fe;
+  }
 }
