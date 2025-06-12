@@ -24,7 +24,7 @@ function TourDetail() {
     title: "Huế mộng mơ - Dấu ấn cố đô",
     rating: 4.8,
     reviewCount: 98,
-    price: 2100000,
+    price: 2000000,
     currency: "đ",
     startDate: "30/05/2025",
     duration: "3 ngày 2 đêm",
@@ -45,6 +45,7 @@ function TourDetail() {
       city: "Tp. Huế",
       region: "Hoàng Thành Huế",
     },
+    // Dữ nguyên customerReview
     customerReview: {
       name: "Hiền",
       comment:
@@ -85,10 +86,11 @@ function TourDetail() {
       "Vườn quốc gia Bạch Mã",
       "Đồi Thiên Ân - Hồ Thủy Tiên",
     ],
+
+    // Dữ nguyên tourRules
     tourRules: {
       included: [
         "Bảo hiểm du lịch suốt tuyến.",
-        "Phí an ninh sân bay, bảo hiểm hàng không thuế phí trường 2 nước (có thể thay đổi tại thời điểm xuất vé).",
         "Khách sạn tiêu chuẩn 5 sao Local hoặc tương đương tốt nhất tại địa phương (2 người/phòng - phòng 3 người trường hợp đi lẻ nam hoặc nữ).",
         "Phục vụ 1 chai nước suối/khách/ngày.",
         "Vé tham quan tất cả các điểm có trong chương trình.",
@@ -346,7 +348,7 @@ function TourDetail() {
                   </div>
                 </div>
                 <button className="view-itinerary-btn">
-                  <Link to="/">Xem hành trình tour</Link>
+                  <Link to="/map-review">Xem hành trình tour</Link>
                 </button>
               </div>
 
@@ -387,6 +389,7 @@ function TourDetail() {
                       {tourData.price.toLocaleString()}
                     </span>
                     <span className="currency">{tourData.currency}</span>
+                    <span className="price"> /người</span>
                   </div>
                 </div>
 

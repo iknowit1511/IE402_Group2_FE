@@ -1,0 +1,79 @@
+/* src/style.scss */
+.app-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+
+  .sidebar {
+    width: 400px;
+    background: #f5f5f5;
+    padding: 20px;
+    overflow-y: auto;
+
+    h2 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    .location-item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 10px;
+      background: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background: #e0e0e0;
+      }
+
+      .marker {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+
+      &.selected {
+        background: #d0f0d0;
+      }
+    }
+  }
+
+  .map-container {
+    flex: 1;
+    height: 100vh; // Chiều cao đầy đủ
+    position: relative;
+
+    #viewDiv {
+      height: 100%;
+      width: 100%;
+    }
+
+    .popup {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      max-width: 300px; // Giới hạn độ rộng popup
+
+      img {
+        width: 100px;
+        height: 80px;
+        margin-right: 10px;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

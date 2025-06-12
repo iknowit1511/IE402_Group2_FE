@@ -1,4 +1,6 @@
 .account-page {
+  width: 50%;
+  margin: 0 auto;
   padding: 2rem;
   font-family: Arial, sans-serif;
 }
@@ -11,13 +13,69 @@
   gap: 1rem;
   margin-top: 1rem;
 }
+.information {
+  font-size: 24px;
+  color: #353945;
+}
+.info-avatar {
+  display: flex;
+  gap: 35px;
+  width: 100%;
+  height: 100px;
+  padding: 20px;
+  border: 1px solid #B1B5C3;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+.info-avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+}
+
+.info-avatar button {
+  width: 169px;
+  height: 40px;
+  border-radius: 8px;
+  background: #3B71FE;
+  color: white;
+  border: none;
+  font-size: 16px;
+}
+
+.info-avatar .delete-account {
+  width: 169px;
+  height: 40px;
+  border-radius: 8px;
+  background: white;
+  color: #F65540;
+  border: 1px solid #F65540;
+  font-size: 16px;
+}
+
 input {
   padding: 0.5rem;
   border: 1px solid #ccc;
+  border-radius: 6px;
 }
 button {
+  width: 150px;
+  height: 48px;
   padding: 0.5rem;
-  background: #2563eb;
+  background: #3B71FE;
   color: white;
   border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #1d4ed8;
+  cursor: pointer;
+}
+
+span {
+  color: #777E90;
+  font-size: 16px;
 }
