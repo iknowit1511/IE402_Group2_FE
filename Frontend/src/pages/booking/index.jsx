@@ -181,10 +181,7 @@ function Booking() {
 
       <div className="summary-section">
         <div className="summary-box">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Hue_Citadel.jpg/220px-Hue_Citadel.jpg"
-            alt="Huế"
-          />
+          <img src="/images/image1.jpg" alt="Huế" />
           <h3>{tenTour}</h3>
           <p>Mã tour : {maTour}</p>
           <p>Khởi hành : {formData.ngayKhoiHanh}</p>

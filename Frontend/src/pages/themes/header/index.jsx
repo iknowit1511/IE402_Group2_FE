@@ -35,7 +35,7 @@ const Header = () => {
           <span>FAQ</span>
           <FaRegBell
             className="notification-icon"
-            style={{ marginRight: "5px", color: "#3F3545" }}
+            style={{ marginRight: "5px", color: "white" }}
             size="20px"
           />
           <Link to="/account">

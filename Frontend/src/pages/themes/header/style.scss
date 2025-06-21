@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background: white;
+  background: #0f2d4e;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   .header-left,
@@ -24,7 +24,7 @@
 .logo {
   font-weight: bold;
   font-size: 1.5rem;
-  color: #2563eb;
+  color: white;
 
   a {
     text-decoration: none;
@@ -41,7 +41,7 @@
 
 .nav a {
   text-decoration: none;
-  color: #3f3545;
+  color: white;
   font-weight: bold;
   transition: color 0.3s ease;
 
@@ -57,15 +57,15 @@
   gap: 1rem;
 
   span {
-    color: #3f3545;
+    color: white;
     font-weight: bold;
   }
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  width: 66px;
+  height: 66px;
+  border-radius: 19%;
 }
 
 .notification-icon:hover {
@@ -96,7 +96,7 @@
   background: none;
   border: 1px solid white;
   padding: 5px;
-  color: black;
+  color: white;
   font-size: 15px;
   font-weight: 500;
   border-radius: 5px;
@@ -105,6 +105,7 @@
 
   &:hover {
     background-color: white;
+    color: #3b71fe;
     border: 1px solid #3b71fe;
   }
 }
