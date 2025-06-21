@@ -1,3 +1,6 @@
+@use "sass:map";
+@import "../../styles/pages/all";
+
 .homepage {
   font-family: sans-serif;
 }
@@ -10,7 +13,7 @@
 .banner-img {
   width: 100%;
   height: 500px;
-  object-fit:cover;
+  object-fit: cover;
 }
 
 .search-form {
@@ -49,43 +52,4 @@
 
 .search-form button:hover {
   background: #1e40af;
-}
-
-/* Footer */
-.footer {
-  margin-top: 10rem;
-  background: #003B95;
-  color: white;
-  padding: 2rem;
-}
-
-.footer-columns {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
-
-.footer input {
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 6px;
-  margin-top: 0.5rem;
-  border: none;
-}
-
-.footer h3,
-.footer h4 {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.footer p {
-  margin: 0.25rem 0;
-}
-
-.copyright {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 0.875rem;
-  color: #ccc;
 }

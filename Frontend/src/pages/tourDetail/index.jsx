@@ -30,11 +30,11 @@ function TourDetail() {
     duration: "3 ngày 2 đêm",
     availableDates: ["30/05/2025", "29/08/2025"], // Thêm các ngày có sẵn
     images: [
-      "/api/placeholder/600/400",
-      "/api/placeholder/200/150",
-      "/api/placeholder/200/150",
-      "/api/placeholder/200/150",
-      "/api/placeholder/200/150",
+      "/images/image1.jpg",
+      "/images/image2.jpg",
+      "/images/image3.jpg",
+      "/images/image4.jpg",
+      "/images/image5.jpg",
     ],
     morePhotos: 12,
     description:

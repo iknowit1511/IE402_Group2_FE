@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./style.scss";
 import { FaFacebook } from "react-icons/fa";
@@ -44,12 +44,33 @@ const LogIn = () => {
   //     }
   //   };
 
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [error, setError] = useState("");
+  // const [loading, setLoading] = useState(false);
+
+  // const handleLogin = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   setError("");
+
+  //   let email = document.getElementById("email").value.trim();
+  //   let password = document.getElementById("password").value.trim();
+
+  //   if (!email || !password) {
+  //     setError("Vui lòng điền đầy đủ thông tin.");
+  //     setLoading(false);
+  //     setTimeout(() => setError(""), 5000);
+  //     return;
+  //   }
+
+  //   console.log("Dữ liệu gửi đi:", { email, password });
+  // };
   return (
     <>
       <div className="login">
         <div className="login-form">
           <h2 style={{ fontSize: "30px" }}>Đăng nhập</h2>
-          {/* <form onSubmit={HandleSubmit}> */}
 
           <p className="signup-text">
             Chưa có tài khoản? <Link to="/register">Đăng ký</Link>
@@ -71,6 +92,7 @@ const LogIn = () => {
             <span>Hoặc tiếp tục với email</span>
           </div>
 
+          {/* <form onSubmit={handleLogin}> */}
           <form>
             <label htmlFor="email">
               Email <span>*</span>
@@ -80,11 +102,9 @@ const LogIn = () => {
               Mật khẩu <span>*</span>
             </label>
             <PasswordToggle />
-            <Link to="/">
-              <button type="submit" className="login-button">
-                Đăng nhập
-              </button>
-            </Link>
+            <button type="submit" className="login-button">
+              Đăng nhập
+            </button>
 
             <p className="forgot-password">
               <Link to="/Forgot-Password">Quên mật khẩu?</Link>

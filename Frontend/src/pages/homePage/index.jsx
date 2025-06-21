@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./style.css";
+import "./style.scss";
 
 export default function Home() {
   const [formData, setFormData] = useState({
