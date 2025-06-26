@@ -1,0 +1,203 @@
+// SCSS Variables
+$primary-color: #3b71fe;
+$hover-color: #2a5bb8;
+$text-color: #000000;
+$secondary-text-color: #777e90;
+$background-color: #ffffff;
+$border-color: #e6e8ec;
+$font-family: Arial, sans-serif;
+$max-width: 1200px;
+$spacing: 2rem;
+$border-radius: 20px;
+
+// Tour Container
+.tour-container {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing;
+  padding: $spacing;
+  font-family: $font-family;
+  color: $text-color;
+  width: 90%;
+  max-width: $max-width;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 95%;
+    padding: 1rem;
+  }
+}
+
+// Breadcrumb
+.breadcrumb {
+  font-size: 15px;
+  margin-bottom: 20px;
+
+  .breadcrumb-link {
+    color: $text-color;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .arrow {
+    margin: 0 5px;
+  }
+
+  .current {
+    font-weight: bold;
+    color: $text-color;
+  }
+}
+
+// Search Bar
+.search_bar {
+  display: flex;
+  align-items: center;
+  background-color: $background-color;
+  padding: 5px;
+  border-radius: $border-radius;
+  border: 2px solid $border-color;
+  width: 350px;
+  align-self: flex-end;
+  transition: border-color 0.3s;
+
+  &:focus-within {
+    border-color: $primary-color;
+  }
+
+  input {
+    flex: 1;
+    padding: 8px;
+    font-size: 16px;
+    color: $secondary-text-color;
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      font-weight: 500;
+      color: $secondary-text-color;
+    }
+  }
+
+  .search-button {
+    width: 36px;
+    height: 36px;
+    background-color: $primary-color;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+
+    i {
+      color: $background-color;
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    align-self: center;
+  }
+}
+
+// Tour Title
+.tour-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 1rem 0;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+// Tour List
+.tour-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Show More Button
+.show-more {
+  width: 200px;
+  padding: 12px 24px;
+  border: none;
+  background-color: $primary-color;
+  color: $background-color;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 2rem auto;
+  display: block;
+  transition: background-color 0.3s, transform 0.2s;
+  text-align: center;
+
+  &:hover {
+    background-color: $hover-color;
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+// Loading Spinner
+.spinner {
+  text-align: center;
+  font-size: 18px;
+  color: $secondary-text-color;
+  margin: $spacing 0;
+  animation: spin 1s linear infinite;
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+}
+
+// Error Message
+.error {
+  text-align: center;
+  font-size: 16px;
+  color: #ff4d4f;
+  margin: $spacing 0;
+  padding: 1rem;
+  background-color: #fff1f2;
+  border-radius: 8px;
+}
+
+// No Tours Message
+.no-tours {
+  text-align: center;
+  font-size: 16px;
+  color: $secondary-text-color;
+  margin: $spacing 0;
+}

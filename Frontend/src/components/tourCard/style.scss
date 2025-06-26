@@ -1,0 +1,113 @@
+// SCSS Variables
+$primary-color: #3b71fe;
+$star-color: #F8CB62;
+$text-color: #23262f;
+$secondary-text-color: #353945;
+$background-color: #fff;
+$shadow-color: rgba(0, 0, 0, 0.08);
+$border-radius: 12px;
+$spacing: 16px;
+$image-height: 200px;
+
+// Global Styles
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.tour-card {
+  width: 300px; // Fixed width for all cards
+  height: 400px; // Fixed height for all cards
+  background: $background-color;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 12px $shadow-color;
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+
+  &__images {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2px;
+    height: $image-height; // Fixed height for image section
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__price-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    z-index: 1;
+    backdrop-filter: blur(2px);
+  }
+
+  &__content {
+    padding: $spacing;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & > *:not(:last-child) {
+      margin-bottom: $spacing / 2;
+    }
+  }
+
+  &__title {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: $text-color;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; // Limit to one line
+    height: 24px; // Fixed height for title
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+    color: $secondary-text-color;
+
+    & > span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+  }
+
+  &__rating {
+    svg {
+      color: $star-color;
+    }
+  }
+
+  &__button {
+    width: 95%;
+    background-color: $primary-color;
+    color: $background-color;
+    padding: 8px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 450;
+    cursor: pointer;
+    margin-top: auto; // Push button to bottom
+  }
+}
