@@ -1,15 +1,18 @@
 // src/components/Map_review/Sidebar.js
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom'; // Import useLocation
 
 const Sidebar = ({ locations = [], onSelectLocation, selectedLocation }) => {
   const getMarkerColor = (index) => {
     const colors = ['blue', 'green', 'red', 'yellow', 'purple']; // Màu cho các địa điểm Bạc Liêu
     return colors[index % colors.length];
   };
+  const { state } = useLocation(); // Get state from navigation
+  const tourTitle = state?.tourTitle; // Extract tourId from state
 
   return (
     <div className="sidebar">
-      <h2>Bạc Liêu khám phá - Dấu ấn <span>miền Tây</span></h2>
+      <h2>{tourTitle || 'Chưa có tiêu đề'}</h2>
       {locations.length > 0 ? (
         locations.map((location, index) => (
           <div
